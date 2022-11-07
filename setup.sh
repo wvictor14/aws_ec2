@@ -35,15 +35,32 @@ ln -s /workspace workspace
 
 
 ##############################
-## install R packages
+## install R and Rstudio
 ##############################
 
-# install R
-sudo apt-get -y install r-base-core r-cran-irkernel
+# The Ubuntu repos contain an outdated version of R so lets add the updated repo to avoid errors
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 
-# for devtools
-sudo apt-get install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev libgsl-dev libgeos-dev libcairo2-dev libxt-dev
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
 
+# Update ubuntu package repo, to get latest R
+sudo apt update
 
-cp .Renviron ~/
+# Install R
+sudo apt -y install r-base r-base-dev
+
+# Install debian package manager, gdebi
+sudo apt install gdebi-core
+
+# Dependencies for R packages like RMariaDB, devtools, tidyverse, sparklyr. Please run seperate.
+sudo apt -y install libcurl4-openssl-dev 
+
+sudo apt -y install libssl-dev libxml2-dev libmariadb-dev build-essential libcurl4-gnutls-dev
+
+# Install RStudio
+wget https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb 
+sudo gdebi -n rstudio-2022.07.2-576-amd64.deb 
+sudo rm rstudio-2022.07.2-576-amd64.deb
+
+# Install R packages
 R -e "source('setup.R')"
