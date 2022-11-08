@@ -49,18 +49,22 @@ sudo apt update
 # Install R
 sudo apt -y install r-base r-base-dev
 
-# Install debian package manager, gdebi
+# Install RStudio-server
+## Install debian package manager, gdebi
 sudo apt install gdebi-core
 
-# Dependencies for R packages like RMariaDB, devtools, tidyverse, sparklyr. Please run seperate.
-sudo apt -y install libcurl4-openssl-dev 
-
-sudo apt -y install libssl-dev libxml2-dev libmariadb-dev build-essential libcurl4-gnutls-dev
-
-# Install RStudio
-wget https://download1.rstudio.org/desktop/jammy/amd64/rstudio-2022.07.2-576-amd64.deb 
-sudo gdebi -n rstudio-2022.07.2-576-amd64.deb 
-sudo rm rstudio-2022.07.2-576-amd64.deb
+# see https://jagg19.github.io/2019/08/aws-r/ for details
+wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb
+sudo gdebi rstudio-server-2022.07.2-576-amd64.deb
+sudo rm rstudio-server-2022.07.2-576-amd64.deb
 
 # Install R packages
+# Dependencies for R packages like RMariaDB, devtools, tidyverse, sparklyr
+sudo apt -y install libcurl4-openssl-dev 
+sudo apt -y install libssl-dev libxml2-dev libmariadb-dev build-essential libcurl4-gnutls-dev 
+sudo apt -y install libfontconfig1-dev libharfbuzz-dev libfribidi-dev
+sudo apt -y install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
+sudo apt -y install libcairo2-dev libxt-dev Cmake
+
+libfontconfig1-dev
 R -e "source('setup.R')"
