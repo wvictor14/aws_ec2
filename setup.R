@@ -1,5 +1,5 @@
-install.packages("tidyverse")
-install.packages("Seurat")
+install.packages(c("devtools", "tidyverse"))
+install.packages(c("Seurat", "SeuratObject"))
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
