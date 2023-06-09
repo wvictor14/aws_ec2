@@ -1,13 +1,15 @@
 # For setting up EC2 instance
 
 1. Create EC2
-I created an instance with the following specs, with scRNAseq analysis in mind:
 
-Instance Name: Martin 2019 scRNAseq IBD
-| OS | Ubuntu 22.04 |
-| key pair name | victor-sonoma-thinkpad |
-| Instance type | r6a.2xlarge |
-| volumes | sda1 8 Gib, sdb 200 GiB |
+These settings are for all-purpose bioinformatic analyses. Prioritize RAM.
+
+OS: Ubuntu 22.04 
+key pair name: victor-sonoma-thinkpad 
+Instance type m5.xlarge (32 CPUs, 128 gb RAM)
+volumes: root 64 Gb, workspace 1 Tb
+
+Configure networking to open ports for for rshiny and rstudio server
 
 For accessing rstudio-server, set security group to allow incoming traffic with following settings:
 Port range:8787, TCP, 0.0.0.0/0
