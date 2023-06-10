@@ -54,6 +54,36 @@ Create PuTTY Private Key file (.ppk)
 
 Then, in WinSCP, add new site with public DNS of EC2 instance. Under Advanced Site Settings, SSH, add .ppk file.
 
+# rstudio server
+
+update version
+
+https://support.posit.co/hc/en-us/articles/216079967-Upgrading-RStudio-Workbench-or-RStudio-Server
+
+```bash
+sudo rstudio-server stop
+sudo apt remove rstudio-server
+sudo gdebi <rstudio-server-package.deb>
+```
+
+```bash
+# configure password
+sudo passwd ubuntu
+```
+
+style
+
+```r
+# vscode style theme
+remotes::install_github("anthonynorth/rscodeio")
+rscodeio::install_theme()
+
+# others
+devtools::install_github("max-alletsee/rstudio-themes")
+library(rstudiothemes)
+install_rstudio_themes(theme = "all_dark")
+```
+
 # Resources
 [Griffith lab "Intro to AWS" workshop](https://rnabio.org/module-00-setup/0000/06/01/Intro_to_AWS/#how-much-does-it-cost-to-use-aws-ec2-resources)
 
