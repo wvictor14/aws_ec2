@@ -7,7 +7,7 @@ sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # verify version
-zsh --version #5.0.8
+zsh --version #5.8.1
 
 echo $SHELL
 
