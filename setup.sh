@@ -33,6 +33,11 @@ sudo chown -R ubuntu:ubuntu /workspace
 cd ~
 ln -s /workspace workspace
 
+##############################
+##           git            ##
+##############################
+git config --global user.name "Victor Yuan"
+git config --global user.email vyuan@sonomabio.com
 
 ##############################
 ## install R and Rstudio
@@ -41,7 +46,7 @@ ln -s /workspace workspace
 # The Ubuntu repos contain an outdated version of R so lets add the updated repo to avoid errors
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 
-sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
+sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/'
 
 # Update ubuntu package repo, to get latest R
 sudo apt update
