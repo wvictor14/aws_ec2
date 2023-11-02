@@ -95,3 +95,10 @@ sudo apt -y install libcairo2-dev libxt-dev Cmake
 
 libfontconfig1-dev
 R -e "source('setup.R')"
+
+##############################
+##      install aws cli     ##
+##############################
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
