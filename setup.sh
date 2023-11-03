@@ -33,6 +33,11 @@ sudo chown -R ubuntu:ubuntu /workspace
 cd ~
 ln -s /workspace workspace
 
+#############################
+## password ##
+#############################
+sudo passwd ubuntu #interactively type password
+
 ##############################
 ##          ohmyzsh         ##
 ##############################
