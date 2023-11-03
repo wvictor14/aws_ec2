@@ -61,6 +61,18 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git config --global user.name "Victor Yuan"
 git config --global user.email vyuan@sonomabio.com
 
+
+##############################
+##  install python          ##
+##############################
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
+
 ##############################
 ## install R and Rstudio
 ##############################
@@ -92,24 +104,16 @@ sudo apt -y install libssl-dev libxml2-dev libmariadb-dev build-essential libcur
 sudo apt -y install libfontconfig1-dev libharfbuzz-dev libfribidi-dev
 sudo apt -y install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 sudo apt -y install libcairo2-dev libxt-dev Cmake
+sudo apt -y install libxml2-dev libfontconfig1-dev
 
-libfontconfig1-dev
 R -e "source('setup.R')"
 
+# install radian
+conda install -c conda-forge radian
+echo "alias r=\"radian\"" >> ~/.zshrc   
 ##############################
 ##      install aws cli     ##
 ##############################
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-
-##############################
-##  install python          ##
-##############################
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
-
-~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init zsh
