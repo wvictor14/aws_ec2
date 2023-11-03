@@ -1,4 +1,5 @@
-install.packages(c("devtools", "tidyverse"))
+install.packages(c("devtools", "tidyverse", 'fs'))
+install.packages('languageserver')
 install.packages(c("Seurat", "SeuratObject"))
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
