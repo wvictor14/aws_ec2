@@ -1,0 +1,42 @@
+{
+    "initial_working_directory": "~",
+    "insert_native_pipe_operator": true,
+    "highlight_r_function_calls": true,
+    "rainbow_parentheses": true,
+    "panes": {
+        "quadrants": [
+            "Source",
+            "TabSet1",
+            "Console",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "History",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Environment",
+            "Files",
+            "Plots",
+            "Packages",
+            "Help",
+            "Build",
+            "Viewer",
+            "Presentations"
+        ],
+        "hiddenTabSet": [
+            "Connections",
+            "VCS",
+            "Tutorial"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
+    "posix_terminal_shell": "bash",
+    "editor_theme": "rscodeio",
+    "highlight_selected_line": true,
+    "scroll_past_end_of_document": true,
+    "indent_guides": "gray",
+    "source_with_echo": true
+}
