@@ -84,6 +84,15 @@ library(rstudiothemes)
 install_rstudio_themes(theme = "all_dark")
 ```
 
+rstudio settings
+
+copy `rstudio-prefs.json` to `~/.config/rstudio`
+
+```bash
+touch ~/.config/rstudio/rstudio-prefs.json
+code  ~/.config/rstudio/rstudio-prefs.json #interactively copy
+```
+
 # Resources
 [Griffith lab "Intro to AWS" workshop](https://rnabio.org/module-00-setup/0000/06/01/Intro_to_AWS/#how-much-does-it-cost-to-use-aws-ec2-resources)
 
