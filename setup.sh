@@ -116,6 +116,7 @@ sudo apt -y install libfontconfig1-dev libharfbuzz-dev libfribidi-dev
 sudo apt -y install libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev
 sudo apt -y install libcairo2-dev libxt-dev Cmake
 sudo apt -y install libxml2-dev libfontconfig1-dev
+sudo apt -y install libproj-dev 
 
 R -e "source('setup.R')"
 
