@@ -82,25 +82,31 @@ rm -rf ~/miniconda3/miniconda.sh
 ## install R and Rstudio
 ##############################
 
-# The Ubuntu repos contain an outdated version of R so lets add the updated repo to avoid errors
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-
-sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/'
+# update indices
+sudo apt update -qq
+# install two helper packages we need
+sudo apt install --no-install-recommends software-properties-common dirmngr
+# add the signing key (by Michael Rutter) for these repos
+# To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc 
+# Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9
+wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+# add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
 
 # Update ubuntu package repo, to get latest R
 sudo apt update
 
 # Install R
-sudo apt -y install r-base r-base-dev
+sudo apt install --no-install-recommends r-base r-base-dev
 
 # Install RStudio-server
 ## Install debian package manager, gdebi
 sudo apt install gdebi-core
 
 # see https://jagg19.github.io/2019/08/aws-r/ for details
-wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.07.2-576-amd64.deb
-sudo gdebi rstudio-server-2022.07.2-576-amd64.deb
-sudo rm rstudio-server-2022.07.2-576-amd64.deb
+wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.1-402-amd64.deb
+sudo gdebi rstudio-server-2023.12.1-402-amd64.deb
+sudo rm rstudio-server-2023.12.1-402-amd64.deb
 
 # Install R packages
 # Dependencies for R packages like RMariaDB, devtools, tidyverse, sparklyr
