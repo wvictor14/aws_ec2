@@ -104,9 +104,9 @@ sudo apt install --no-install-recommends r-base r-base-dev
 sudo apt install gdebi-core
 
 # see https://jagg19.github.io/2019/08/aws-r/ for details
-wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.12.1-402-amd64.deb
-sudo gdebi rstudio-server-2023.12.1-402-amd64.deb
-sudo rm rstudio-server-2023.12.1-402-amd64.deb
+wget https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2024.04.0-735-amd64.deb
+sudo gdebi rstudio-server-2024.04.0-735-amd64.deb
+sudo rm rstudio-server-2024.04.0-735-amd64.deb
 
 # Install R packages
 # Dependencies for R packages like RMariaDB, devtools, tidyverse, sparklyr
