@@ -46,9 +46,9 @@ Add user / pw
 
 # Transferring data
 
-[How to Move files in and out of an AWS EC2 Instance – Windows](https://asf.alaska.edu/how-to/data-recipes/moving-files-into-and-out-of-an-aws-ec2-instance-windows/)
+Easiest is drag and drop from vscode ssh remote <-> local
 
-I use PuTTY + winscp
+Other options like PuTTY + winscp:
 
 Create PuTTY Private Key file (.ppk)
 
